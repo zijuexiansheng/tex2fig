@@ -13,5 +13,5 @@ else
     tex2fig_aux=$PWD/script_dir
 fi
 
-sed -i 's#"=>replace-me<="#'"${tex2fig_aux}"'#' bin/tex2fig
+sed -i 's#=>replace-me<=#'"${tex2fig_aux}"'#' bin/tex2fig
 
