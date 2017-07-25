@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
-mkdir bin/
-mkdir script_dir/
+
+mkdir -p bin/
+mkdir -p script_dir/
 cp src/tex2fig.py bin/tex2fig
 cp src/tex2fig.sh script_dir/tex2fig.sh
 cp src/tex2fig.tmpl script_dir/tex2fig.tmpl
 
-echo "Done"
-echo "Add the following command in your .bashrc or .zshrc file before using tex2fig"
-echo "  export PATH=$PWD/bin:\$PATH"
-echo "  export LOONCONFIG=$PWD/script_dir"
+if [ "$#" -eq "1" ]; then
+    tex2fig_aux=$1
+else
+    tex2fig_aux=$PWD/script_dir
+fi
+
+sed -i 's#"=>replace-me<="#'"${tex2fig_aux}"'#' bin/tex2fig
 

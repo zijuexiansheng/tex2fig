@@ -4,8 +4,7 @@ import os
 import sys
 import argparse
 
-#script_dir=os.path.dirname( os.path.abspath(os.path.realpath(__file__)) )
-script_dir = os.path.join( os.environ['LOONCONFIG'], "tex2fig")
+script_dir="=>replace-me<="
 
 def main(args):
     working_dir="/tmp/tex2fig-{}/".format( os.getpid() )
