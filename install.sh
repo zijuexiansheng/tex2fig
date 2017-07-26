@@ -13,5 +13,5 @@ else
     tex2fig_aux=$PWD/libexec
 fi
 
-sed -i.bak2 's#=>replace-me<=#'"${tex2fig_aux}"'#' bin/tex2fig
+sed -i.bak 's#=>replace-me<=#'"${tex2fig_aux}"'#' bin/tex2fig
 
